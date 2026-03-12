@@ -79,7 +79,7 @@ unzip assets.zip
 - Python >= 3.11
 - PyTorch
 - pymomentum >= 0.1.90
-- trimesh >= 4.8.3 (Only for demo.py)
+- trimesh >= 4.8.3 (for additional tools only: mhr-smpl conversion, LOD conversion and segmentation)
 
 ## Quick Start
 

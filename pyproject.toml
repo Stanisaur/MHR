@@ -31,8 +31,8 @@ version-file = "mhr/_version.py"
 packages = ["mhr"]
 
 [tool.pixi.workspace]
-channels = ["conda-forge"]
-platforms = ["osx-arm64", "linux-64"]
+channels = ["conda-forge", "pytorch", "nvidia"]
+platforms = [ "linux-64"]
 
 [tool.pixi.tasks]
 demo = { cmd = "python demo.py", description = "Run demo script" }
@@ -41,6 +41,11 @@ wheel-clean = { cmd = "rm -rf dist build *.egg-info", description = "Wheel: Clea
 wheel-build = { cmd = "python -m build", description = "Wheel: Build source distribution and wheel package" }
 wheel-test = { cmd = "python scripts/test_wheel.py", description = "Wheel: Test built wheel in fresh environment using uv" }
 wheel-publish = { cmd = "twine upload --repository mhr dist/*", description = "Wheel: Publish wheel package to PyPI" }
+
+[tool.pixi.system-requirements]
+cuda = "12.8"
+
+
 
 [tool.pixi.pypi-dependencies]
 mhr = { path = ".", editable = true }
@@ -52,7 +57,9 @@ hatchling = "*"
 hatch-vcs = "*"
 
 [tool.pixi.dependencies]
-pymomentum = ">=0.1.90"
+pymomentum-gpu = ">=0.1.90"
+pytorch = { version = "*", build = "*cuda*" }
+torchvision = { version = "*", build = "*cuda*" }
 
 [tool.pixi.feature.py312.dependencies]
 python = "3.12.*"

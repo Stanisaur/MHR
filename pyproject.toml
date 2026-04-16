@@ -31,7 +31,7 @@ version-file = "mhr/_version.py"
 packages = ["mhr"]
 
 [tool.pixi.workspace]
-channels = ["conda-forge", "pytorch", "nvidia"]
+channels = ["conda-forge", "pytorch", "nvidia", "pytorch3d"]
 platforms = [ "linux-64"]
 
 [tool.pixi.tasks]
@@ -60,6 +60,7 @@ hatch-vcs = "*"
 pymomentum-gpu = ">=0.1.90"
 pytorch = { version = "*", build = "*cuda*" }
 torchvision = { version = "*", build = "*cuda*" }
+pytorch3d = "*"
 
 [tool.pixi.feature.py312.dependencies]
 python = "3.12.*"

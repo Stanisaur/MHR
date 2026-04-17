@@ -61,6 +61,9 @@ pymomentum-gpu = ">=0.1.90"
 pytorch = { version = "*", build = "*cuda*" }
 torchvision = { version = "*", build = "*cuda*" }
 pytorch3d = "*"
+transformers = ">=5.5.4,<6"
+accelerate = ">=1.13.0,<2"
+pillow = ">=12.2.0,<13"
 
 [tool.pixi.feature.py312.dependencies]
 python = "3.12.*"

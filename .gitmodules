@@ -1,0 +1,3 @@
+[submodule "3rdparty/rtmlib"]
+	path = 3rdparty/rtmlib
+	url = https://github.com/tau-j/rtmlib.git
